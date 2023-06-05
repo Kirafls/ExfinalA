@@ -15,6 +15,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { HttpClientModule } from '@angular/common/http';
 import { NasaComponent } from './nasa/nasa.component';
 import { SimpsonComponent } from './simpson/simpson.component';
+import { CoctelComponent } from './coctel/coctel.component';
 
 
 
@@ -24,6 +25,7 @@ import { SimpsonComponent } from './simpson/simpson.component';
     NavbarComponent,
     NasaComponent,
     SimpsonComponent,
+    CoctelComponent,
    
   ],
   imports: [
