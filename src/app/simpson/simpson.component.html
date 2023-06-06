@@ -1,5 +1,40 @@
+<div class="main"><h1>Personajes de los Simpson</h1></div>
+<div class="container">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+              <th scope="col">Nombre</th>
+              <th scope="col">Estado</th>
+              <th scope="col">Ocupacion</th>
+              <th scope="col">Genero</th>
+            </tr>
+          </thead>
+          <tr *ngFor="let simp of data">
+            <th>{{simp.Nombre}}</th>
+            <td>{{simp.Estado}}</td>
+            <td>{{simp.Ocupacion}}</td>
+            <td>{{simp.Genero}}</td>
+          </tr>
+      </table>
+</div>
+<hr>
 <div class="main">
-    <div *ngFor="let simp of data">
-        {{simp.Nombre}}
-    </div>
+    <h1>Busqueda de personajes</h1><br>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Simpson</span>
+        <input type="text"  [(ngModel)]="simpson" class="form-control" placeholder="Escribe el nombre de un personaje" aria-label="Username" aria-describedby="basic-addon1" required>
+        <button class="btn btn-success" (click)="buscarSimpson()">Buscar personaje</button>
+      </div>
+      <div *ngIf="bandera!=0 else noSimpson">
+        <div class="card" style="width: 18rem;">
+            <img src="{{aux.Imagen}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{aux.Nombre}}</h5>
+                <p class="card-text">{{aux.Historia}}</p>
+                <p class="card-text">{{aux.Genero}}</p>
+                <p class="card-text">{{aux.Estado}}</p>
+            </div>
+          </div>
+      </div>
+      <ng-template #noSimpson></ng-template>
 </div>
