@@ -10,7 +10,7 @@ import { SsimpsonService } from '../service/ssimpson.service';
 export class SimpsonComponent implements OnInit,AfterViewInit{
     
     data:any[]=[];
-    inputBuscar?:ElementRef;
+    ListSimp:any[]=[];
 
     constructor(public alertifyservice:AlertifyService,public ssimpson:SsimpsonService){
       this.alertifyservice.success("Componente simpson cargado!")
@@ -23,11 +23,10 @@ export class SimpsonComponent implements OnInit,AfterViewInit{
     }
     findSimpson(){
       this.ssimpson.getdata().subscribe(data=>{
-        this.data=data;
+        this.data=data.docs;
         console.log(this.data);
-      })
+      })      
     }
-    getPersonaje(personaje:string){
-      
-    }
+
+    
 }
